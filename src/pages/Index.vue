@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <q-scroll-area ref="aaa" style="width: 400px; height: 700px;">
+    <q-scroll-area ref="container" style="width: 400px; height: 500px;">
       <q-chat-message v-for="chat in chats" :key="chat.id"
         :name="chat.name"
         :avatar="chat.avatar"
@@ -37,9 +37,9 @@ export default {
       }
       this.chats.push(chat)
       this.text = ''
-      setTimeout(() => {
-        this.$refs.aaa.setScrollPosition(this.$refs.aaa.scrollHeight + 100)
-      }, 10)
+      this.$nextTick(() => {
+        this.$refs.container.setScrollPosition(this.$refs.aaa.scrollHeight)
+      })
     }
   }
 }
