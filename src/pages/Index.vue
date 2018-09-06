@@ -11,9 +11,6 @@
   </q-page>
 </template>
 
-<style>
-</style>
-
 <script>
 export default {
   name: 'PageIndex',
@@ -21,14 +18,15 @@ export default {
     return {
       me: 'aaa',
       chats: [
-        { chatid: '1', name: 'aaa', avatar: 'aaa', text: ['asdggszgsdg'] },
-        { chatid: '2', name: 'bbb', avatar: 'bbb', text: ['zsdhshddfcbcfn'] },
-        { chatid: '3', name: 'ccc', avatar: 'ccc', text: ['zsgsdgdxdbb'] },
-        { chatid: '4', name: 'ddd', avatar: 'ddd', text: ['wtgddnbxn'] },
-        { chatid: '5', name: 'eee', avatar: 'eee', text: ['ddfbbbbfbdbxbf'] }
-      ],
-      chat: { chatid: '1', name: 'aaa', avatar: 'aaa', text: ['agsgzgdgzdgsgfsfzsdff'] }
+        { chatid: '1', name: 'aaa', avatar: 'statics/avatar/coco.jpg', text: ['야'] },
+        { chatid: '2', name: 'bbb', avatar: 'statics/avatar/kiwi.jpg', text: ['왜'] },
+        { chatid: '3', name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
+        { chatid: '4', name: 'ddd', avatar: 'statics/avatar/pete.jpg', text: ['킄'] }
+      ]
     }
   }
 }
 </script>
+
+<style>
+</style>
