@@ -7,7 +7,7 @@
         :text="chat.text"
         :sent="chat.name === me"
       />
-      <q-input v-model="text" float-label="입력" />
+      <q-input v-model="text" float-label="입력" @keyup.enter="submit"/>
     </div>
   </q-page>
 </template>
@@ -25,6 +25,18 @@ export default {
         { chatid: '3', name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
         { chatid: '4', name: 'ddd', avatar: 'statics/avatar/coco.jpg', text: ['킄'] }
       ]
+    }
+  },
+  methods: {
+    submit () {
+      let chat = {
+        chatid: this.chats.length + 1,
+        name: this.me,
+        avatar: 'statics/avatar/coco.jpg',
+        text: [this.text]
+      }
+      this.chats.push(chat)
+      this.text = ''
     }
   }
 }
