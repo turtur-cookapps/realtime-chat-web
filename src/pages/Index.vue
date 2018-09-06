@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <q-scroll-area ref="container" style="width: 400px; height: 500px;">
+    <q-scroll-area ref="messages" style="width: 400px; height: 500px;">
       <q-chat-message v-for="chat in chats" :key="chat.id"
         :name="chat.name"
         :avatar="chat.avatar"
         :text="chat.text"
-        :sent="chat.name === me"
+        :sent="chat.name === name"
       />
     </q-scroll-area>
     <q-input style="width: 400px;" v-model="text" float-label="입력" @keyup.enter="submit" />
@@ -17,10 +17,10 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      me: 'aaa',
+      name: 'kim',
       text: '',
       chats: [
-        { id: '1', name: 'aaa', avatar: 'statics/avatar/joys.jpg', text: ['야'] },
+        { id: '1', name: 'park', text: ['야'], avatar: 'https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg' },
         { id: '2', name: 'bbb', avatar: 'statics/avatar/kiwi.jpg', text: ['왜'] },
         { id: '3', name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
         { id: '4', name: 'ddd', avatar: 'statics/avatar/coco.jpg', text: ['킄'] }
@@ -31,14 +31,14 @@ export default {
     submit (value) {
       let chat = {
         id: this.chats.length + 1,
-        name: this.me,
-        avatar: 'statics/avatar/joys.jpg',
+        name: this.name,
+        avatar: 'https://www.mills.edu/uniquely-mills/students-faculty/student-profiles/images/student-profile-gabriela-mills-college.jpg',
         text: [this.text]
       }
       this.chats.push(chat)
       this.text = ''
       this.$nextTick(() => {
-        this.$refs.container.setScrollPosition(this.$refs.aaa.scrollHeight)
+        this.$refs.messages.setScrollPosition(this.$refs.messages.scrollHeight)
       })
     }
   }
