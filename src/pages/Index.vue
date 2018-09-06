@@ -18,6 +18,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
+      db: null,
       name: 'kim',
       text: '',
       chats: [
@@ -28,7 +29,7 @@ export default {
       ]
     }
   },
-  mount () {
+  mounted () {
     let config = {
       apiKey: 'AIzaSyCTelhl0NdLGvSyAOVNOcKyuoXP9lJ5bb8',
       authDomain: 'realtime-chat-web.firebaseapp.com',
@@ -38,6 +39,7 @@ export default {
       messagingSenderId: '478046047641'
     }
     firebase.initializeApp(config)
+    this.db = firebase.database()
   },
   methods: {
     submit (value) {
@@ -48,6 +50,8 @@ export default {
         text: [this.text]
       }
       this.chats.push(chat)
+      this.db.ref('chats').push(chat)
+
       this.text = ''
       this.$nextTick(() => {
         this.$refs.messages.setScrollPosition(this.$refs.messages.scrollHeight)
