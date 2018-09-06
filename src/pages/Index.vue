@@ -32,7 +32,7 @@ export default {
       let chat = {
         chatid: this.chats.length + 1,
         name: this.me,
-        avatar: 'statics/avatar/coco.jpg',
+        avatar: 'statics/avatar/joys.jpg',
         text: [this.text]
       }
       this.chats.push(chat)
