@@ -56,7 +56,8 @@ module.exports = function (ctx) {
         'QItemMain',
         'QItemSide',
         'QChatMessage',
-        'QInput'
+        'QInput',
+        'QScrollArea'
       ],
       directives: [
         'Ripple'
