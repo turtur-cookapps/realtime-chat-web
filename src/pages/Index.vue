@@ -9,6 +9,11 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data () {
+    return {
+      chats: [{name: 'aaa', test: 'bbb'}]
+    }
+  }
 }
 </script>
