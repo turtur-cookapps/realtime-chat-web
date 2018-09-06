@@ -2,10 +2,10 @@
   <q-page>
     <div style="width: 500px; max-width: 90vw;">
       <q-chat-message v-for="chat in chats" :key="chat.chatid"
-        :name=chat.name
-        :avatar=chat.avatar
-        :text=chat.text
-        sent
+        :name="chat.name"
+        :avatar="chat.avatar"
+        :text="chat.text"
+        :sent="chat.name === me"
       />
     </div>
   </q-page>
@@ -19,6 +19,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
+      me: 'aaa',
       chats: [
         { chatid: '1', name: 'aaa', avatar: 'aaa', text: ['asdggszgsdg'] },
         { chatid: '2', name: 'bbb', avatar: 'bbb', text: ['zsdhshddfcbcfn'] },
