@@ -1,10 +1,10 @@
 <template>
-  <div style="width: 500px; max-width: 90vw;">
-    <q-page>
+  <q-page>
+    <div style="width: 500px; max-width: 90vw;">
       <q-chat-message
-        name="me"
+        name="야임마"
         avatar="statics/boy-avatar.png"
-        :text="['hunter2']"
+        :text="['뭐']"
         stamp="4 minutes ago"
         sent
       />
@@ -14,8 +14,8 @@
         :text="['hey, if you type in your pw', 'it will show as stars']"
         stamp="7 minutes ago"
       />
-    </q-page>
-  </div>
+    </div>
+  </q-page>
 </template>
 
 <style>
