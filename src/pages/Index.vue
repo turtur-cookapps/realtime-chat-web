@@ -2,9 +2,6 @@
   <div style="width: 500px; max-width: 90vw;">
     <q-page>
       <q-chat-message
-        label='Sunday, 19th'
-      />
-      <q-chat-message
         name="me"
         avatar="statics/boy-avatar.png"
         :text="['hunter2']"
@@ -12,7 +9,7 @@
         sent
       />
       <q-chat-message
-        name="Jane"
+        name="ㅎㅎㅎㅎ"
         avatar="statics/linux-avatar.png"
         :text="['hey, if you type in your pw', 'it will show as stars']"
         stamp="7 minutes ago"
