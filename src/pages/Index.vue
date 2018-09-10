@@ -19,20 +19,20 @@ export default {
   data () {
     return {
       db: null,
-      name: 'kim',
+      name: 'joys',
       text: '',
       chats: [
-        { name: 'kim', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
-        { name: 'bbb', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
-        { name: 'ccc', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
-        { name: 'ddd', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
+        { name: 'joys', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
+        { name: 'kiwi', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
+        { name: 'mumu', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
+        { name: 'coco', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
       ]
       /*
       chats: [
-        { name: 'kim', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
-        { name: 'bbb', avatar: 'statics/avatar/kiwi.jpg', text: ['왜'] },
-        { name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
-        { name: 'ddd', avatar: 'statics/avatar/coco.jpg', text: ['킄'] }
+        { name: 'joys', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
+        { name: 'kiwi', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
+        { name: 'mumu', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
+        { name: 'coco', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
       ]
       */
     }
