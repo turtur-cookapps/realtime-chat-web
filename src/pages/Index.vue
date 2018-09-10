@@ -22,11 +22,19 @@ export default {
       name: 'kim',
       text: '',
       chats: [
-        { id: '1', name: 'kim', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
-        { id: '2', name: 'bbb', avatar: 'statics/avatar/kiwi.jpg', text: ['왜'] },
-        { id: '3', name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
-        { id: '4', name: 'ddd', avatar: 'statics/avatar/coco.jpg', text: ['킄'] }
+        { name: 'kim', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
+        { name: 'bbb', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
+        { name: 'ccc', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
+        { name: 'ddd', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
       ]
+      /*
+      chats: [
+        { name: 'kim', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
+        { name: 'bbb', avatar: 'statics/avatar/kiwi.jpg', text: ['왜'] },
+        { name: 'ccc', avatar: 'statics/avatar/mumu.jpg', text: ['뭐'] },
+        { name: 'ddd', avatar: 'statics/avatar/coco.jpg', text: ['킄'] }
+      ]
+      */
     }
   },
   mounted () {
@@ -40,11 +48,17 @@ export default {
     }
     firebase.initializeApp(config)
     this.db = firebase.database()
+    this.db.ref('chats').limitToLast(10).on('value', (snap) => {
+      this.chats = []
+      snap.forEach(child => {
+        this.chats.push(child.val())
+        this.chats[this.chats.length - 1].id = child.key
+      })
+    })
   },
   methods: {
     submit (value) {
       let chat = {
-        id: this.chats.length + 1,
         name: this.name,
         avatar: 'statics/avatar/joys.jpg',
         text: [this.text]
