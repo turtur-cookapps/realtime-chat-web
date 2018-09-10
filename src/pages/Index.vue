@@ -24,15 +24,13 @@ export default {
       db: null,
       name: 'joyce',
       text: '',
-      chats: [
-
-      ]
+      chats: []
       /*
       chats: [
-        { name: 'joyce', text: ['야'], avatar: 'statics/avatar/joyce.jpg' },
-        { name: 'kiwi', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
-        { name: 'mumu', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
-        { name: 'coco', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
+        { name: 'joyce', text: ['야'], avatar: 'https://web.cookappslab.com/avatar/joyce.jpg' },
+        { name: 'kiwi', text: ['왜'], avatar: 'https://web.cookappslab.com/avatar/kiwi.jpg' },
+        { name: 'mumu', text: ['뭐'], avatar: 'https://web.cookappslab.com/avatar/mumu.jpg' },
+        { name: 'coco', text: ['킄'], avatar: 'https://web.cookappslab.com/avatar/coco.jpg' }
       ]
       */
     }
@@ -60,7 +58,7 @@ export default {
     submit (value) {
       let chat = {
         name: this.name,
-        avatar: 'statics/avatar/' + this.name + '.jpg',
+        avatar: 'https://web.cookappslab.com/avatar/' + this.name + '.jpg',
         text: [this.text]
       }
       this.chats.push(chat)
