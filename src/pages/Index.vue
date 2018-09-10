@@ -9,7 +9,7 @@
       />
     </q-scroll-area>
     <div class="row">
-      <q-input style="width: 100px;" v-model="text" stack-label="이름" @keyup.enter="submit" />
+      <q-input style="width: 100px;" v-model="name" stack-label="이름" @keyup.enter="submit" />
       <q-input style="width: 300px;" v-model="text" stack-label="내용" @keyup.enter="submit" />
     </div>
   </q-page>
@@ -22,17 +22,14 @@ export default {
   data () {
     return {
       db: null,
-      name: 'joys',
+      name: 'joyce',
       text: '',
       chats: [
-        { name: 'joys', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
-        { name: 'kiwi', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
-        { name: 'mumu', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
-        { name: 'coco', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
+
       ]
       /*
       chats: [
-        { name: 'joys', text: ['야'], avatar: 'statics/avatar/joys.jpg' },
+        { name: 'joyce', text: ['야'], avatar: 'statics/avatar/joyce.jpg' },
         { name: 'kiwi', text: ['왜'], avatar: 'statics/avatar/kiwi.jpg' },
         { name: 'mumu', text: ['뭐'], avatar: 'statics/avatar/mumu.jpg' },
         { name: 'coco', text: ['킄'], avatar: 'statics/avatar/coco.jpg' }
