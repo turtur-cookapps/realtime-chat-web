@@ -8,7 +8,10 @@
         :sent="chat.name === name"
       />
     </q-scroll-area>
-    <q-input style="width: 400px;" v-model="text" float-label="입력" @keyup.enter="submit" />
+    <div class="row">
+      <q-input style="width: 100px;" v-model="text" stack-label="이름" @keyup.enter="submit" />
+      <q-input style="width: 300px;" v-model="text" stack-label="내용" @keyup.enter="submit" />
+    </div>
   </q-page>
 </template>
 
@@ -60,7 +63,7 @@ export default {
     submit (value) {
       let chat = {
         name: this.name,
-        avatar: 'statics/avatar/joys.jpg',
+        avatar: 'statics/avatar/' + this.name + '.jpg',
         text: [this.text]
       }
       this.chats.push(chat)
