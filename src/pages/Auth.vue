@@ -35,9 +35,6 @@ export default {
         this.$router.push('/auth')
       }
     })
-  },
-  methods: {
-
   }
 }
 </script>

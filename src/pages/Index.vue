@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <q-scroll-area ref="scroll" style="width: 400px; height: 500px;">
+    <q-scroll-area style="width: 400px; height: 500px;" ref="scroll">
       <q-chat-message v-for="chat in chats" :key="chat.id"
         :name="chat.name"
         :avatar="chat.avatar"
@@ -32,16 +32,27 @@ export default {
   },
   mounted () {
     firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        console.log(user)
-      } else {
+      if (!user) {
         this.$router.replace('/auth')
         return
       }
       this.name = user.displayName
       this.avatar = user.photoURL
       this.db = firebase.database()
-      this.db.ref('chats').on('child_added', (snap) => {
+      /*
+      this.db.ref('chats').limitToLast(10).once('value', (snap) => {
+        snap.forEach(child => {
+          if (this.chats.length === 9) return
+          this.chats.push(child.val())
+          this.chats[this.chats.length - 1].id = child.val().key
+          this.$nextTick(() => {
+            this.$refs.scroll.setScrollPosition(this.$refs.scroll.scrollHeight)
+          })
+        })
+      })
+      */
+      this.db.ref('chats').limitToLast(10).on('child_added', (snap) => {
+        console.log('sdgdg')
         this.chats.push(snap.val())
         this.chats[this.chats.length - 1].id = snap.key
         this.$nextTick(() => {
@@ -57,7 +68,6 @@ export default {
         avatar: this.avatar,
         text: [this.text]
       }
-      // this.chats.push(chat)
       this.db.ref('chats').push(chat)
       this.text = ''
     }
