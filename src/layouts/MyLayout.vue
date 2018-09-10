@@ -9,6 +9,7 @@
         <q-toolbar-title>
           Realtime Chat
         </q-toolbar-title>
+        <q-btn label="SignOut" @click="signOut"/>
       </q-toolbar>
     </q-layout-header>
 
@@ -20,6 +21,7 @@
 
 <script>
 import { openURL } from 'quasar'
+import firebase from 'firebase'
 
 export default {
   name: 'MyLayout',
@@ -29,7 +31,11 @@ export default {
     }
   },
   methods: {
-    openURL
+    openURL,
+    signOut () {
+      firebase.auth().signOut()
+      this.$router.push('/auth')
+    }
   }
 }
 </script>
