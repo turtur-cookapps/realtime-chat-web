@@ -1,4 +1,4 @@
-///1차
+//1차
 1. 설명
 3. node 설치
 3. yarn 설치
@@ -6,14 +6,16 @@
 5. eslint & Vue 2 Snippets 설치
 5. quasar-cli 설치
 6. quasar init
-7. Index.vue에 로컬로 chat 한개 띄우고 이름과 사진 입히기
-8. Index.vue에 로컬로 chat for문으로 여러개 띄우고 이름과 사진 입히기
-9. 데이터와 싱크
-10. 스크롤 컨테이너로 감싸기
-11. 내용 입력창 만들고 이름, 사진 데이터 생성
-12. 내용 입력창에 엔터치면 데이터 추가하여 기본 UI 완성
 
-///2차
+//2차
+1. Index.vue에 로컬로 q-chat-message 한개 띄우고 이름과 사진 입히기
+2. Index.vue에 로컬로 q-chat-message for문으로 여러개 띄우고 이름과 사진 입히기
+3. 데이터와 싱크
+4. 스크롤 컨테이너로 감싸기
+5. q-input 내용 입력창 만들고 이름, 사진 데이터 생성
+6. q-input 내용 입력창에 엔터치면 데이터 추가하여 기본 UI 완성
+
+//3차
 1. firebase.com 접속 이후 구글 로그인
 2. 앱 만들기
 3. 리얼타임 데이터베이스 생성
@@ -23,16 +25,18 @@
 7. App.vue에 긁어온 코드 추가, 최초 인증 수행
 8. 내용 입력했을때 rdb에 push
 9. 접속시 push한 내용 긁어오도록 처리
-10. firebase.com 접속 이후 facebook 로그인 추가
-11. facebook 가서 앱 추가 이후 앱아이디와 시크릿키 설정
-12. facebook 가서 로그인 설정 > 리디렉션 uri 설정
-13. Auth.vue 페이지 생성
-14. Login 버튼 하나 달아놓고 로그인 코드 복붙후 테스트. 완료하면 Index.vue로 이동하도록 설정
-15. Logout 버튼 달아 놓고 코드 복붙후 테스트
-16. Index.vue에서 firebaseLoginStatus 이벤트로 로그인 정보 가져옴
-17. 가져온 정보와 name, photo 매핑
 
-//3차
+//4차 (시간되면)
+1. firebase.com 접속 이후 facebook 로그인 추가
+2. facebook 가서 앱 추가 이후 앱아이디와 시크릿키 설정
+3. facebook 가서 로그인 설정 > 리디렉션 uri 설정
+4. Auth.vue 페이지 생성
+5. Login 버튼 하나 달아놓고 로그인 코드 복붙후 테스트. 완료하면 Index.vue로 이동하도록 설정
+6. Logout 버튼 달아 놓고 코드 복붙후 테스트
+7. Index.vue에서 firebaseLoginStatus 이벤트로 로그인 정보 가져옴
+8. 가져온 정보와 name, photo 매핑
+
+//5차
 1. quasar build
 2. firebase login
 3. firebase deploy
