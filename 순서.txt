@@ -1,11 +1,11 @@
 //1차
 1. 설명
-3. node 설치
+2. node 설치
 3. yarn 설치
 4. vscode 설치
 5. eslint & Vue 2 Snippets 설치
-5. quasar-cli 설치
-6. quasar init
+6. quasar-cli 설치
+7. quasar init
 
 //2차
 1. Index.vue에 로컬로 q-chat-message 한개 띄우고 이름과 사진 입히기

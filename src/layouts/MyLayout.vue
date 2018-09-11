@@ -1,11 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-layout-header>
-      <q-toolbar
-        color="primary"
-        :glossy="$q.theme === 'mat'"
-        :inverted="$q.theme === 'ios'"
-      >
+      <q-toolbar color="primary" >
         <q-toolbar-title>
           Realtime Chat
         </q-toolbar-title>
@@ -20,7 +16,6 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
 import firebase from 'firebase'
 
 export default {
@@ -31,7 +26,6 @@ export default {
     }
   },
   methods: {
-    openURL,
     signOut () {
       firebase.auth().signOut()
       this.$router.push('/auth')

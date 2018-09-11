@@ -38,28 +38,17 @@ export default {
       }
       this.name = user.displayName
       this.avatar = user.photoURL
-      this.db = firebase.database()
-      /*
-      this.db.ref('chats').limitToLast(10).once('value', (snap) => {
-        snap.forEach(child => {
-          if (this.chats.length === 9) return
-          this.chats.push(child.val())
-          this.chats[this.chats.length - 1].id = child.val().key
-          this.$nextTick(() => {
-            this.$refs.scroll.setScrollPosition(this.$refs.scroll.scrollHeight)
-          })
-        })
-      })
-      */
-      this.db.ref('chats').limitToLast(10).on('child_added', (snap) => {
-        console.log('sdgdg')
-        this.chats.push(snap.val())
-        this.chats[this.chats.length - 1].id = snap.key
-        this.$nextTick(() => {
-          this.$refs.scroll.setScrollPosition(this.$refs.scroll.scrollHeight)
-        })
-      })
     })
+    this.db = firebase.database()
+    this.db.ref('chats').limitToLast(7).on('child_added', (snap) => {
+      let chat = snap.val()
+      chat.id = snap.key
+      this.chats.push(chat)
+      this.$refs.scroll.setScrollPosition(this.$refs.scroll.scrollHeight, 1000)
+    })
+  },
+  beforeDestroy () {
+    this.db.ref('chats').off('child_added')
   },
   methods: {
     submit (value) {
